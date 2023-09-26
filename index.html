@@ -1,52 +1,78 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Lists, Tables and Forms</title>
-		<link rel="stylesheet" type="text/css" href="css/tableForm.css">
-	</head>
-	<body>
-		<div class="container">
-		<h1>Poetry Workshops</h1>
-		<p>We will be conducting a number of poetry workshops and symposiums throughout the year.</p>
-		<p>Please note that the following events are free to members:</p>
-		<ul>
-			<li>A Poetic Perspective</li>
-			<li>Walt Whitman at War</li>
-			<li>Found Poems and Outsider Poetry</li>
-		</ul>
-		<table>
-			<tr class="head">
-				<th></th>
-				<th>New York</th>
-				<th>Chicago</th>
-				<th>San Francisco</th>
-			</tr>
-			<tr>
-				<th>A Poetic Perspective</th>
-				<td>Sat, 4 Feb 2012<br />11am - 2pm</td>
-				<td>Sat, 3 Mar 2012<br />11am - 2pm</td>
-				<td>Sat, 17 Mar 2012<br />11am - 2pm</td>
-			</tr>
-			<tr class="even">
-				<th>Walt Whitman at War</th>
-				<td>Sat, 7 Apr 2012<br />11am - 1pm</td>
-				<td>Sat, 5 May 2012<br />11am - 1pm</td>
-				<td>Sat, 19 May 2012<br />11am - 1pm</td>
-			</tr>
-			<tr>
-				<th>Found Poems &amp; Outsider Poetry</th>
-				<td>Sat, 9 Jun 2012<br />11am - 2pm</td>
-				<td>Sat, 7 Jul 2012<br />11am - 2pm</td>
-				<td>Sat, 21 Jul 2012<br />11am - 2pm</td>
-			</tr>
-			<tr class="even">
-				<th>Natural Death: An Exploration</th>
-				<td>Sat, 4 Aug 2012<br />11am - 4pm</td>
-				<td>Sat, 8 Sep 2012<br />11am - 4pm</td>
-				<td>Sat, 15 Sep 2012<br />11am - 4pm</td>
-			</tr>
-		</table>
-		<form action="http://www.example.com/form.php" method="get">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h2>Poetry Workshops</h2>
+      <p>
+        We will be conducting a number of poetry workshops and symposiums
+        throughout the year. .
+      </p>
+    </div>
+
+    <div id="navbar">
+      <a href="#form">Form</a>
+      <a href="#table" target="table">Table</a>
+      <a class="active" href="#list">List</a>
+    </div>
+
+    <div class="content">
+      <!-- List -->
+      <div id="list">
+        <div>
+        <p>Please note that the following events are free to members:</p>
+        <ol>
+          <li>A Poetic Perspective</li>
+          <li>Walt Whitman at War</li>
+          <li>Found Poems and Outsider Poetry</li>
+        </ol>
+        </div>
+      </div>
+      <!-- End of List -->
+
+      <!-- Table -->
+      <div id="table">
+        <table>
+          <tr class="head">
+            <th></th>
+            <th>New York</th>
+            <th>Chicago</th>
+            <th>San Francisco</th>
+          </tr>
+          <tr>
+            <th>A Poetic Perspective</th>
+            <td>Sat, 4 Feb 2012<br />11am - 2pm</td>
+            <td>Sat, 3 Mar 2012<br />11am - 2pm</td>
+            <td>Sat, 17 Mar 2012<br />11am - 2pm</td>
+          </tr>
+          <tr class="even">
+            <th>Walt Whitman at War</th>
+            <td>Sat, 7 Apr 2012<br />11am - 1pm</td>
+            <td>Sat, 5 May 2012<br />11am - 1pm</td>
+            <td>Sat, 19 May 2012<br />11am - 1pm</td>
+          </tr>
+          <tr>
+            <th>Found Poems &amp; Outsider Poetry</th>
+            <td>Sat, 9 Jun 2012<br />11am - 2pm</td>
+            <td>Sat, 7 Jul 2012<br />11am - 2pm</td>
+            <td>Sat, 21 Jul 2012<br />11am - 2pm</td>
+          </tr>
+          <tr class="even">
+            <th>Natural Death: An Exploration</th>
+            <td>Sat, 4 Aug 2012<br />11am - 4pm</td>
+            <td>Sat, 8 Sep 2012<br />11am - 4pm</td>
+            <td>Sat, 15 Sep 2012<br />11am - 4pm</td>
+          </tr>
+        </table>
+      </div>
+      <!-- End of Table -->
+
+      <!-- form -->
+      <div id="form">
+        <form action="http://www.example.com/form.php" method="get">
 			<fieldset>
 				<legend>Register your interest</legend>
 				<p><label class="title" for="name">Your name:</label>
@@ -65,6 +91,25 @@
 			</fieldset>
  	    <div class="submit"><input type="submit" value="Register" /></div>
 		</form>
-		</div>
-	</body>
+      </div>
+      <!-- End of form -->
+    </div>
+
+    <script>
+      window.onscroll = function () {
+        myFunction();
+      };
+
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
+
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+    </script>
+  </body>
 </html>
